@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday AANY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Optional Google Font for elegance -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('my.jpg') center/cover no-repeat fixed;
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    header p {
+      background: rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .heroine-btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #f15bb5;
+      border: none;
+      color: #fff;
+      font-size: 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    section {
+      background: rgba(0,0,0,0.6);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform .3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .shayari {
+      font-style: italic;
+      font-size: 1.4em;
+      margin-bottom: 30px;
+      color: #ffe6f0;
+    }
+
+    footer {
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 1.1em;
+    }
+
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      background: #f15bb5;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    #flower-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    .flower {
+      position: absolute;
+      width: 30px; height: 30px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Red_rose_icon.svg/1200px-Red_rose_icon.svg.png') center/contain no-repeat;
+      opacity: 0.8;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    @media(max-width:768px) {
+      header h1 { font-size: 2em; }
+      .shayari { font-size: 1.2em; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Happy Birthday AANY 🎉❤️</h1>
+    <p>Every moment with you lights up my world. I love you infinitely.<br>— Your Swadhin</p>
+    <a href="herooine.html">
+      <button class="heroine-btn">Do you want to see my heroine? ❤️</button>
+    </a>
+  </header>
+
+  <!-- Memories Section -->
+  <section>
+    <h2>Our Memories</h2>
+    <div class="gallery">
+      <img src="my1.jpg" alt="Memory 1">
+      <img src="my2.jpg" alt="Memory 2">
+      <img src="my3.jpg" alt="Memory 3">
+      <img src="my4.jpg" alt="Memory 4">
+      <img src="my5.jpg" alt="Memory 5">
+      <img src="my6.jpg" alt="Memory 6">
+      <img src="my7.jpg" alt="Memory 7">
+      <img src="my8.jpg" alt="Memory 8">
+      <img src="my9.jpg" alt="Memory 9">
+    </div>
+  </section>
+
+  <!-- Letter & Shayari -->
+  <section>
+    <h2>My Birthday Letter</h2>
+    <div class="shayari">
+      “गुल को गुलशन मुबारक,<br>
+      शायर को शायरी मुबारक,<br>
+      चाँद को चाँदनी मुबारक,<br>
+      आशिक़ को महबूबा मुबारक,<br>
+      मेरी तरफ से तुम्हें जन्मदिन मुबारक!”<br>
+    </div>
+    <p style="max-width: 700px; margin: 0 auto; line-height:1.8;">
+      Happy Birthday, my love! You are the warmth in my every sunrise and the laughter in my nights.
+      Thank you for being my forever.<br><br>
+      Forever yours,<br>
+      Your Swadhin 💕
+    </p>
+  </section>
+
+  <footer>Forever yours, Your Swadhin 💕</footer>
+
+  <!-- Flower Shower -->
+  <div id="flower-container"></div>
+
+  <!-- Background Music -->
+  <audio id="bg-music" src="Tu Hain Toh Main Hoon - Sky Force 128 Kbps.mp3" autoplay loop></audio>
+  <button class="music-btn" onclick="toggleMusic()">Play/Pause Music</button>
+
+  <script>
+    function toggleMusic() {
+      const music = document.getElementById('bg-music');
+      if (music.paused) { music.play(); } else { music.pause(); }
+    }
+
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.style.left = Math.random()*100 + 'vw';
+      flower.style.animationDuration = (3+Math.random()*5) + 's';
+      document.getElementById('flower-container').appendChild(flower);
+      setTimeout(()=>flower.remove(), 8000);
+    }
+    setInterval(createFlower, 300);
+  </script>
+</body>
+</html>
